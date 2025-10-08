@@ -61,4 +61,5 @@ src/pipeline - Здесь прогоняется пайплайн проекта
 
 src/utils - Утилита для визуализации детекций
 
-
+### Пример работы
+https://drive.google.com/file/d/1GAa_uoBwqtAB8yJWW4S2GiGV5ATdKhpS/view?usp=sharing
