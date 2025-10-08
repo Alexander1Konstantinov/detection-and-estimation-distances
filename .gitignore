@@ -1,0 +1,5 @@
+data/
+.v*
+*.ipynb
+*output*
+__pycache__
