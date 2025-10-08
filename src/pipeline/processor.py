@@ -1,7 +1,6 @@
 import cv2
 from src.models.yolo_detector import YOLODetector
 from src.models.distance_estimator import DistanceEstimator
-from src.utils.monitoring import PerformanceMonitor
 from src.utils.visualization import draw_detections, draw_performance_stats
 
 
@@ -11,7 +10,6 @@ class VideoProcessor:
     def __init__(self):
         self.detector = YOLODetector()
         self.distance_estimator = DistanceEstimator()
-        self.performance_monitor = PerformanceMonitor()
 
         print("Инициализация VideoProcessor завершена")
 
