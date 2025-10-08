@@ -1,4 +1,3 @@
-import numpy as np
 from config.settings import DistanceConfig
 
 
@@ -8,7 +7,7 @@ class DistanceEstimator:
         self.known_widths = DistanceConfig.KNOWN_WIDTHS
         self.focal_length = DistanceConfig.FOCAL_LENGTH
 
-    def estimate(self, class_name, x1, x2):
+    def estimate(self, class_name: str, x1: int, x2: int) -> float:
         """
         Оценка расстояния до объекта
 
@@ -16,7 +15,7 @@ class DistanceEstimator:
             detection: словарь с информацией об обнаружении
 
         Returns:
-            float: расстояние в метрах или None если нельзя вычислить
+            float: расстояние в метрах
         """
         pixel_width = x2 - x1
 

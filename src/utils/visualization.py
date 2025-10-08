@@ -2,20 +2,24 @@ import cv2
 import numpy as np
 from config.settings import DistanceConfig
 from ..models.distance_estimator import DistanceEstimator
+from typing import List, Dict, Any
 
-def draw_detections(frame, detections, id2name):
+
+def draw_detections(
+    frame: np.ndarray, detections: List[Any], id2name: Dict[int, str]
+) -> np.ndarray:
     """
     Отрисовка bounding boxes и информации на кадре
-    
+
     Args:
         frame: исходный кадр
         detections: список обнаружений
-        
+
     Returns:
-        frame: кадр с отрисованными детекциями
+        frame: кадр с отрисованными bounding boxes и подписями
     """
     estimator = DistanceEstimator()
-    
+
     for detection in detections:
         boxes = detection.boxes
         for box in boxes:
@@ -39,19 +43,23 @@ def draw_detections(frame, detections, id2name):
                 (255, 255, 255),
                 thickness=2,
             )
-    
+
     return frame
 
-def draw_performance_stats(frame, cur_time, detections_count):
-    """Отрисовка статистики производительности"""
+
+def draw_performance_stats(
+    frame: np.ndarray, cur_time: float, detections_count: int
+) -> np.ndarray:
+    
     stats_text = f"Time per frame: {cur_time:.1f}ms || Objects: {detections_count}"
-    cv2.putText(frame, stats_text, (10, 30),
-               cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2)
-    
-    
+    cv2.putText(
+        frame, stats_text, (10, 30), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (255, 255, 255), 2
+    )
+
     if cur_time > 100:
         warning_text = "LOW PERFORMANCE!"
-        cv2.putText(frame, warning_text, (10, 60),
-                   cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
-    
+        cv2.putText(
+            frame, warning_text, (10, 60), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2
+        )
+
     return frame

@@ -1,6 +1,4 @@
-import cv2
 import argparse
-import time
 from src.pipeline.processor import VideoProcessor
 
 def main():
