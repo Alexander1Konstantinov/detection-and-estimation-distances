@@ -10,7 +10,7 @@ class VideoProcessor:
         self.detector = YOLODetector()
         self.distance_estimator = DistanceEstimator()
 
-    def process_video(self, video_path: str, verbose: bool = False) -> None:
+    def process_video(self, video_path: str, output_path: str = 'output.avi', verbose: bool = False) -> None:
 
         cap = cv2.VideoCapture(video_path)
         w, h, fps = (
@@ -23,7 +23,7 @@ class VideoProcessor:
         )
 
         video_writer = cv2.VideoWriter(
-            "detected_output.avi", cv2.VideoWriter_fourcc(*"mp4v"), fps, (w, h)
+            output_path, cv2.VideoWriter_fourcc(*"mp4v"), fps, (w, h)
         )
 
         cap.release()
