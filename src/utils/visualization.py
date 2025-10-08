@@ -1,4 +1,3 @@
-# src/utils/visualization.py
 import cv2
 import numpy as np
 from config.settings import DistanceConfig

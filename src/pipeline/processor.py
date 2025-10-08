@@ -32,7 +32,6 @@ class VideoProcessor:
         )
         
         cap.release()
-        # self.performance_monitor.start_frame()
         for detections in self.detector.model(
             video_path,
             stream=True,
@@ -48,7 +47,6 @@ class VideoProcessor:
             
             processed_frame = draw_detections(frame, detections, self.detector.model.names)
 
-            # avg_time, max_time, min_time, fps = self.performance_monitor.get_stats()
             cur_time = sum(detections.speed.values())
             processed_frame = draw_performance_stats(
                 processed_frame, cur_time, len(detections)
@@ -58,4 +56,3 @@ class VideoProcessor:
         del video_writer
         
 
-        # return avg_time, max_time, min_time, fps

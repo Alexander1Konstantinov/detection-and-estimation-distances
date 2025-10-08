@@ -7,7 +7,6 @@ class DistanceEstimator:
     def __init__(self):
         self.known_widths = DistanceConfig.KNOWN_WIDTHS
         self.focal_length = DistanceConfig.FOCAL_LENGTH
-        # self.alert_distance = DistanceConfig.ALERT_DISTANCE
 
     def estimate(self, class_name, x1, x2):
         """
