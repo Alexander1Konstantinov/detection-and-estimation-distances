@@ -59,7 +59,7 @@ src/utils - Утилита для визуализации детекций
 https://drive.google.com/file/d/1GAa_uoBwqtAB8yJWW4S2GiGV5ATdKhpS/view?usp=sharing
 
 
-## 🏗️ Архитектура системы
+## Архитектура системы
 
 <div align="center">
 <img src="./docs/images/pipeline.png" alt="Блок-схема пайплайна" width="800"/>
