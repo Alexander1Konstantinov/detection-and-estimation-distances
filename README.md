@@ -78,7 +78,6 @@ https://drive.google.com/file/d/1GAa_uoBwqtAB8yJWW4S2GiGV5ATdKhpS/view?usp=shari
 
 ## Тесты
 
-<div align="center">
 Perfomance тесты: 
   
   - Измеряется время инференса и проверяется на то, что оно меньше 100мс
@@ -103,4 +102,4 @@ Unit тесты:
 Integration тесты:
 
   - Тест полного пайплайна с различными настройками
-</div>
+
